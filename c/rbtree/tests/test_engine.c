@@ -7,10 +7,10 @@
 
 /* #define INTERACTIVE */
 
-/* This program provides a cli interface for printing, checking and adding
- * elements to a red-black tree, with all the functionality for checking
- * it's validity. This program can be used by the user to interact with the
- * tree, or it can be fed pre-generated input for testing. 
+/* This program provides a cli interface for printing, checking, adding and
+ * removing elements to\from a red-black tree, with all the functionality for
+ * checking it's validity. This program can be used by the user to interact
+ * with the tree, or it can be fed pre-generated input for testing. 
  *
  * For simplicity, no data is stored in tree nodes, all keys must be 
  * of length 1, and all input strings must contain 2 characters: 
@@ -21,6 +21,7 @@
  *
  * Commands:
  * -- 'aX' -- add element with key "X"
+ * -- 'dX' -- delete element with key "X"
  * -- 'p_' -- print tree (needs second char for simplicity, can be any)
  * -- 'c_' -- check tree and terminate (second char as on print */
 
@@ -118,6 +119,14 @@ int main() {
                 printf(op_res ? "Added\n" : "Was in tree\n");
 #else
                 rbtree_add_element(&root, key, NULL);
+#endif
+                break;
+            case 'd':
+#ifdef INTERACTIVE
+                op_res = rbtree_remove_element(&root, key);
+                printf(op_res ? "Removed\n" : "Was not in tree\n");
+#else
+                rbtree_remove_element(&root, key);
 #endif
                 break;
 #ifdef INTERACTIVE

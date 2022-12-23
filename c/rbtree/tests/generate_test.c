@@ -37,10 +37,13 @@ int main(int argc, char **argv)
     /* generate random number of commands */
     num_commands = random_in_range(min_commands, max_commands);
 
-    /* generate n commands of type "aX", where X is the one-char string 
-     * identifier of the element, and print them to stdout */
+    /* generate n commands of type "aX" or "dX", where X is the one-chr string,
+     * identifier of an element, and print them to stdout */
     for (; num_commands > 0; num_commands--) {
-        printf("a%c\n", random_in_range(min_char, max_char));
+        int command;
+
+        command = random_in_range(0, 1) ? 'a' : 'd';
+        printf("%c%c\n", command, random_in_range(min_char, max_char));
     }
 
     /* print the "check tree validity" command to complete the test input */
