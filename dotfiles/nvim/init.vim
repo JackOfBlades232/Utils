@@ -51,6 +51,7 @@ set undofile
 set cursorline
 set mouse=a
 set history=1000
+set nowrap
 
 " Lang specific
 au BufNewFile,BufRead *.pp set filetype=pascal
