@@ -1,4 +1,4 @@
-/* 4_22/rbtree.h */
+/* rbtree/rbtree.h */
 #ifndef RBTREE_SENTRY
 #define RBTREE_SENTRY
 

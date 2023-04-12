@@ -1,4 +1,4 @@
-/* 4_22/rbtree.c */
+/* rbtree/rbtree.c */
 #include "rbtree.h"
 #include <stdlib.h>
 #include <string.h>

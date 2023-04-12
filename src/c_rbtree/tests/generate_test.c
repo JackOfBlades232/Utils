@@ -1,4 +1,4 @@
-/* 4_22/test_generation/generate_test.c */
+/* rbtree/test_generation/generate_test.c */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

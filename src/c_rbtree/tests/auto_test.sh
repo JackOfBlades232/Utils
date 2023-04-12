@@ -1,5 +1,6 @@
 #!/bin/sh
-# 4_22/auto_test.sh
+# rbtree/test_generation/auto_test.sh
+
 # script for running randomly generated tests for insertion 
 # ( param 1 = num of tests )
 
