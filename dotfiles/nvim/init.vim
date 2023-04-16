@@ -12,8 +12,6 @@ syntax on
 set t_Co=256
 set termguicolors
 let g:gruvbox_bold=1
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_transparent_bg='1'
 let g:gruvbox_italic=0
 set background=dark
 colorscheme gruvbox
@@ -26,6 +24,11 @@ set scrolloff=8
 
 " Search
 set incsearch
+set nohlsearch
+
+" Wild menu & file find
+set path+=**
+set wildmenu
 
 " Tabs config
 set shiftwidth=4
@@ -35,7 +38,8 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 
-set colorcolumn=80
+" Tags
+command! MakeTags !ctags -R .
 
 " Undo
 if !isdirectory($HOME."/.vim")
@@ -48,6 +52,7 @@ set undodir=~/.vim/undo-dir
 set undofile
 
 " Other
+set colorcolumn=80
 set cursorline
 set mouse=a
 set history=1000
