@@ -41,6 +41,10 @@ set tabstop=4
 " Tags
 command! MakeTags !ctags -R .
 
+" File browser
+let g:netrw_banner=0
+" TODO: incomplete
+
 " Undo
 if !isdirectory($HOME."/.vim")
     call mkdir($HOME."/.vim", "", 0770)
@@ -71,5 +75,6 @@ let &t_EI = "\<Esc>[2 q"
 " Remaps
 let mapleader = " "
 nnoremap <leader>pv :Ex<CR>
+nnoremap <C-f> :find 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
