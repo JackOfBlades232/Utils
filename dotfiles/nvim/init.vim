@@ -72,9 +72,16 @@ let &t_SI = "\<Esc>[5 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
+" Clipboard  
+set clipboard+=unnamedplus
+
 " Remaps
 let mapleader = " "
 nnoremap <leader>pv :Ex<CR>
 nnoremap <C-f> :find 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+noremap <leader>y "+y
+noremap <leader>p "+p
+noremap <leader>Y "*y
+noremap <leader>P "*p
