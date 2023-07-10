@@ -79,8 +79,6 @@ set clipboard+=unnamedplus
 let mapleader = " "
 nnoremap <leader>pv :Ex<CR>
 nnoremap <C-f> :find 
-nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
-nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 nnoremap <Leader>y "+y
