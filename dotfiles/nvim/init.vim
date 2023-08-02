@@ -17,6 +17,10 @@ set background=dark
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
 
+" Custom highlight for keywords
+autocmd Syntax * syn keyword myTodo NOTE IDEA HUH HACK SPEED OPTIMIZE FEATURE FEAT BUG FIX TEST containedin=.*Comment,vimCommentTitle,cComment,cCommentL,cBlock contained
+hi def link myTodo Todo
+
 " Line numbers
 set nu
 set relativenumber
