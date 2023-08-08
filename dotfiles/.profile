@@ -40,3 +40,5 @@ export ELM_SCALE=1.5
 C_INCLUDE_PATH=/home/hhf232/Utils/headers
 export C_INCLUDE_PATH
 
+# core files
+ulimit -c unlimited
