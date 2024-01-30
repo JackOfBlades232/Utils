@@ -7,6 +7,21 @@ filetype on
 filetype plugin on
 filetype indent on
 
+if !exists("g:os")
+    if has("win64") || has("win32") || has("win16")
+        let g:os = "Windows"
+    else
+        let g:os = substitute(system('uname'), '\n', '', '')
+    endif
+endif
+
+if has("gui_running")
+    set backspace=indent,eol,start
+    set guifont=Cascadia\ Mono:h14
+    set guioptions=Ace
+    set guicursor=n-v-c:blinkon0-block-Cursor
+endif
+
 " Syntax highlighting
 syntax on
 set t_Co=256
@@ -15,12 +30,11 @@ let g:gruvbox_bold=1
 let g:gruvbox_italic=0
 set background=dark
 colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE
 
 " Custom highlight for keywords and types
-autocmd Syntax * syn keyword myTodo NOTE IDEA HUH HACK SPEED OPTIMIZE FEATURE FEAT BUG FIX TEST containedin=.*Comment,vimCommentTitle,cComment,cCommentL,cBlock contained
+autocmd Syntax * syn keyword myTodo NOTE IDEA HUH HACK SPEED OPTIMIZE FEATURE FEAT BUG FIX TEST WIP containedin=.*Comment,vimCommentTitle,cComment,cCommentL,cBlock contained
 hi def link myTodo Todo
-autocmd Syntax * syn keyword myType u8 s8 u16 s16 u32 s32 u64 s64 f32 f64
+autocmd Syntax * syn keyword myType u8 s8 u16 s16 u32 s32 u64 s64 f32 f64 u32f s32f
 hi def link myType Type
 
 " Line numbers
@@ -78,9 +92,6 @@ let &t_SI = "\<Esc>[5 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
-" Clipboard  
-set clipboard+=unnamedplus
-
 " Remaps
 let mapleader = " "
 nnoremap <leader>pv :Ex<CR>
@@ -91,3 +102,9 @@ nnoremap <Leader>y "+y
 nnoremap <Leader>p "+p
 nnoremap <Leader>Y "*y
 nnoremap <Leader>P "*p
+
+if g:os == "Windows"
+    nnoremap <Leader>b :!build\build.bat<CR>
+else
+    nnoremap <Leader>b :make build
+endif
