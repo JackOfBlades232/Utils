@@ -26,15 +26,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-
-# Added by Toolbox App
-export PATH="$PATH:/home/hhf232/.local/share/JetBrains/Toolbox/scripts"
-
 # gnome app scale
-export GDK_SCALE=2
-export QT_AUTO_SCREEN_SET_FACTOR=1
-export QT_SCALE_FACTOR=2
-export ELM_SCALE=1.5
+#export GDK_SCALE=2
+#export QT_AUTO_SCREEN_SET_FACTOR=1
+#export QT_SCALE_FACTOR=2
+#export ELM_SCALE=1.5
 
 # C libs and headers PATH
 C_INCLUDE_PATH=/home/hhf232/Utils/headers
