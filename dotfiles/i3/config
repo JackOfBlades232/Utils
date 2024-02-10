@@ -14,7 +14,7 @@ set $amod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 24px
+font pango:monospace 12px
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -47,7 +47,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xset r rate 375 30
 
 # screen res
-exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440 --scale 1.33x1.33 --dpi 192 
+# exec --no-startup-id xrandr --output eDP-1-1 --mode 2560x1440 --scale 1.33x1.33 --dpi 192 
 
 # compositor
 exec --no-startup-id picom
@@ -58,14 +58,17 @@ exec --no-startup-id nitrogen --restore
 # core files
 exec --no-startup-id ulimit -c unlimited
 
+# keyboard layout switch
+exec_always setxkbmap -model pc105 -layout us,ru -variant , -option grp:alt_shift_toggle
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym $mod+F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym $mod+F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym $mod+F10 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym $mod+F3 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym $mod+F2 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym $mod+F1 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 # Brightnessctl for device brightness settings
-bindsym $mod+F2 exec --no-startup-id brightnessctl set 10%+ && $refresh_i3status
-bindsym $mod+F1 exec --no-startup-id brightnessctl set 10%- && $refresh_i3status
+bindsym $mod+F10 exec --no-startup-id brightnessctl set 10%+ && $refresh_i3status
+bindsym $mod+F9 exec --no-startup-id brightnessctl set 10%- && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -116,10 +119,6 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# keyboard layout switch
-bindsym $mod+$amod+0 exec setxkbmap us
-bindsym $mod+$amod+9 exec setxkbmap ru
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
