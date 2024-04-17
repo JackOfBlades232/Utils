@@ -2,6 +2,8 @@
 set nocompatible
 set noswapfile
 set nobackup
+set nowritebackup
+set exrc
 
 filetype on
 filetype plugin on
@@ -63,7 +65,7 @@ command! MakeTags !ctags -R .
 
 " File browser
 let g:netrw_banner=0
-" TODO: incomplete
+" @TODO(PKiyashko): incomplete
 
 " Undo
 if !isdirectory($HOME."/.vim")
@@ -84,7 +86,6 @@ set nowrap
 
 " Lang specific
 au BufNewFile,BufRead *.pp set filetype=pascal
-au BufNewFile,BufRead *.inc set filetype=nasm
 au BufNewFile,BufRead *.asm set filetype=nasm
 
 " Cursor
@@ -106,5 +107,50 @@ nnoremap <Leader>P "*p
 if g:os == "Windows"
     nnoremap <Leader>b :!build\build.bat<CR>
 else
-    nnoremap <Leader>b :make build
+    nnoremap <Leader>b :make prog<CR>
+endif
+
+if has('nvim')
+    call plug#begin()
+
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+
+    call plug#end()
+
+    " @TODO(PKiyashko): go over coc 7 telescope remap
+
+    " COC
+
+    " Use `[g` and `]g` to navigate diagnostics
+    " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+    nmap <silent> [g <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+    " GoTo code navigation
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+
+    " Symbol renaming
+    nmap <leader>rn <Plug>(coc-rename)
+
+    " Formatting selected code
+    xmap <leader>f  <Plug>(coc-format-selected)
+    nmap <leader>f  <Plug>(coc-format-selected)
+
+    " Add `:Format` command to format current buffer
+    command! -nargs=0 Format :call CocActionAsync('format')
+
+    set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+    " Telescope
+    " Find files using Telescope command-line sugar.
+    nnoremap <leader>ff <cmd>Telescope find_files<cr>
+    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+    nnoremap <leader>fb <cmd>Telescope buffers<cr>
+    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+    
 endif
