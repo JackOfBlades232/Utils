@@ -119,7 +119,7 @@ if has('nvim')
 
     call plug#end()
 
-    " @TODO(PKiyashko): go over coc 7 telescope remap
+    " @TODO(PKiyashko): go over coc & telescope remap
 
     " COC
 
@@ -134,12 +134,17 @@ if has('nvim')
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
 
+    nmap <silent> <C-]> <Plug>(coc-definition)
+
     " Symbol renaming
     nmap <leader>rn <Plug>(coc-rename)
 
     " Formatting selected code
-    xmap <leader>f  <Plug>(coc-format-selected)
-    nmap <leader>f  <Plug>(coc-format-selected)
+    xmap <leader>f <Plug>(coc-format-selected)
+    nmap <leader>f <Plug>(coc-format-selected)
+    
+    xmap = <Plug>(coc-format-selected)
+    nmap = <Plug>(coc-format-selected)
 
     " Add `:Format` command to format current buffer
     command! -nargs=0 Format :call CocActionAsync('format')
@@ -152,5 +157,7 @@ if has('nvim')
     nnoremap <leader>fg <cmd>Telescope live_grep<cr>
     nnoremap <leader>fb <cmd>Telescope buffers<cr>
     nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+    nnoremap <C-f> <cmd>Telescope find_files<cr>
     
 endif
