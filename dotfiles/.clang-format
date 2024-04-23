@@ -1,3 +1,4 @@
+# @TODO: no breaking in class methods
 BasedOnStyle: WebKit
 IndentWidth: 4
 TabWidth: 4
@@ -8,29 +9,16 @@ ReferenceAlignment: Right
 ColumnLimit: 80
 AlignAfterOpenBracket: Align
 AlignArrayOfStructures: Left
-AlignConsecutiveAssignments:
-    Enabled: true
-    AcrossEmptyLines: false
-    AcrossComments: false
-    AlignCompound: false
-AlignConsecutiveBitFields:
-    Enabled: true
-    AcrossEmptyLines: false
-    AcrossComments: false
-AlignConsecutiveMacros:
-    Enabled: true
-    AcrossEmptyLines: false
-    AcrossComments: false
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveMacros: Consecutive
 AlignEscapedNewlines: Left
 AlignOperands: Align
-AlignTrailingComments:
-    Kind: Always
-    OverEmptyLines: 2
+AlignTrailingComments: true
 AllowAllArgumentsOnNextLine: true
 AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: Empty
 AllowShortCaseLabelsOnASingleLine: false
-AllowShortCompoundRequirementOnASingleLine: true
 AllowShortEnumsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: InlineOnly
 AllowShortIfStatementsOnASingleLine: Never
@@ -40,19 +28,24 @@ BinPackArguments: false
 BitFieldColonSpacing: Both
 BreakBeforeBraces: Custom
 BraceWrapping:
-    AfterNamespace: true
-    AfterExternBlock: true
-    SplitEmptyFunction: true
-    SplitEmptyNamespace: true
-BracedInitializerIndentWidth: 4
-BreakAdjacentStringLiterals: true
-BreakAfterAttributes: Leave
-BreakAfterReturnType: Automatic
-BreakBeforeConceptDeclarations: Allowed
+  AfterClass:      false
+  AfterControlStatement: false
+  AfterEnum:       false
+  AfterFunction:   true
+  AfterNamespace:  true
+  AfterObjCDeclaration: false
+  AfterStruct:     false
+  AfterUnion:      false
+  AfterExternBlock: true
+  BeforeCatch:     false
+  BeforeElse:      false
+  IndentBraces:    false
+  SplitEmptyFunction: true
+  SplitEmptyNamespace: true
 BreakBeforeTernaryOperators: false
 BreakConstructorInitializers: BeforeColon
 BreakStringLiterals: false
-BreakTemplateDeclarations: Yes
+AlwaysBreakTemplateDeclarations: Yes
 CompactNamespaces: false
 ContinuationIndentWidth: 4
 Cpp11BracedListStyle: true
@@ -63,9 +56,7 @@ IndentAccessModifiers: false
 IndentExternBlock: NoIndent
 IndentGotoLabels: false
 IndentWrappedFunctionNames: false
-InsertBraces: false
 LambdaBodyIndentation: Signature
-MainIncludeChar: Any
 NamespaceIndentation: None
 IndentPPDirectives: BeforeHash
 PPIndentWidth: 2
