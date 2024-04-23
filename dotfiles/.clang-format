@@ -1,0 +1,87 @@
+BasedOnStyle: WebKit
+IndentWidth: 4
+TabWidth: 4
+Language: Cpp
+DerivePointerAlignment: false
+PointerAlignment: Right
+ReferenceAlignment: Right
+ColumnLimit: 80
+AlignAfterOpenBracket: Align
+AlignArrayOfStructures: Left
+AlignConsecutiveAssignments:
+    Enabled: true
+    AcrossEmptyLines: false
+    AcrossComments: false
+    AlignCompound: false
+AlignConsecutiveBitFields:
+    Enabled: true
+    AcrossEmptyLines: false
+    AcrossComments: false
+AlignConsecutiveMacros:
+    Enabled: true
+    AcrossEmptyLines: false
+    AcrossComments: false
+AlignEscapedNewlines: Left
+AlignOperands: Align
+AlignTrailingComments:
+    Kind: Always
+    OverEmptyLines: 2
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortCompoundRequirementOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: InlineOnly
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: false
+BinPackArguments: false
+BitFieldColonSpacing: Both
+BreakBeforeBraces: Custom
+BraceWrapping:
+    AfterNamespace: true
+    AfterExternBlock: true
+    SplitEmptyFunction: true
+    SplitEmptyNamespace: true
+BracedInitializerIndentWidth: 4
+BreakAdjacentStringLiterals: true
+BreakAfterAttributes: Leave
+BreakAfterReturnType: Automatic
+BreakBeforeConceptDeclarations: Allowed
+BreakBeforeTernaryOperators: false
+BreakConstructorInitializers: BeforeColon
+BreakStringLiterals: false
+BreakTemplateDeclarations: Yes
+CompactNamespaces: false
+ContinuationIndentWidth: 4
+Cpp11BracedListStyle: true
+EmptyLineAfterAccessModifier: Leave
+EmptyLineBeforeAccessModifier: Leave
+IncludeBlocks: Preserve
+IndentAccessModifiers: false
+IndentExternBlock: NoIndent
+IndentGotoLabels: false
+IndentWrappedFunctionNames: false
+InsertBraces: false
+LambdaBodyIndentation: Signature
+MainIncludeChar: Any
+NamespaceIndentation: None
+IndentPPDirectives: BeforeHash
+PPIndentWidth: 2
+QualifierAlignment: Left
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceBeforeSquareBrackets: false
+SpaceInEmptyBlock: false
+SpacesInAngles: Never
+SpacesInSquareBrackets: false
+Standard: Auto
+UseTab: Never
