@@ -60,6 +60,9 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 
+set pumheight=15
+set pumwidth=60
+
 " Tags
 command! MakeTags !ctags -R .
 
@@ -142,14 +145,9 @@ if has('nvim')
     " Formatting selected code
     xmap <leader>f <Plug>(coc-format-selected)
     nmap <leader>f <Plug>(coc-format-selected)
-    
-    xmap = <Plug>(coc-format-selected)
-    nmap = <Plug>(coc-format-selected)
 
     " Add `:Format` command to format current buffer
     command! -nargs=0 Format :call CocActionAsync('format')
-
-    set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
     " Telescope
     " Find files using Telescope command-line sugar.

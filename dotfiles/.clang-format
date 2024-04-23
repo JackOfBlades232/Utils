@@ -1,4 +1,8 @@
-# @TODO: no breaking in class methods
+# @TODO: 
+#   no breaking in class methods
+#   sort out, which initializer spaces around them (only non-cpp11 ones?)
+#   same w/ line breaks
+#   Fix expression alignment
 BasedOnStyle: WebKit
 IndentWidth: 4
 TabWidth: 4
@@ -18,7 +22,7 @@ AlignTrailingComments: true
 AllowAllArgumentsOnNextLine: true
 AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: Empty
-AllowShortCaseLabelsOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: true
 AllowShortEnumsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: InlineOnly
 AllowShortIfStatementsOnASingleLine: Never
@@ -43,12 +47,14 @@ BraceWrapping:
   SplitEmptyFunction: true
   SplitEmptyNamespace: true
 BreakBeforeTernaryOperators: false
+BreakBeforeBinaryOperators: false
 BreakConstructorInitializers: BeforeColon
 BreakStringLiterals: false
 AlwaysBreakTemplateDeclarations: Yes
 CompactNamespaces: false
 ContinuationIndentWidth: 4
 Cpp11BracedListStyle: true
+SpaceBeforeCpp11BracedList: false
 EmptyLineAfterAccessModifier: Leave
 EmptyLineBeforeAccessModifier: Leave
 IncludeBlocks: Preserve
