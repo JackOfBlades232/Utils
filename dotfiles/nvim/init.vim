@@ -21,8 +21,9 @@ if has("gui_running")
     set backspace=indent,eol,start
     set guifont=Cascadia\ Mono:h14
     set guioptions=Ace
-    set guicursor=n-v-c:blinkon0-block-Cursor
 endif
+
+set guicursor=n-v-c-sm:block,i-ci-ve:ver15,r-cr-o:hor20
 
 " Syntax highlighting
 syntax on
@@ -90,6 +91,7 @@ set nowrap
 " Lang specific
 au BufNewFile,BufRead *.pp set filetype=pascal
 au BufNewFile,BufRead *.asm set filetype=nasm
+au BufNewFile,BufRead *.frag.inc,*.vert.inc,*.comp.inc,*.glsl.inc set ft=glsl
 
 " Cursor
 let &t_SI = "\<Esc>[5 q"
@@ -119,6 +121,7 @@ if has('nvim')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+    Plug 'tikhomirov/vim-glsl'
 
     call plug#end()
 
