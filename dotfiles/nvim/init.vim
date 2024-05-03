@@ -121,6 +121,7 @@ if has('nvim')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
     Plug 'tikhomirov/vim-glsl'
 
     call plug#end()
@@ -152,13 +153,12 @@ if has('nvim')
     " Add `:Format` command to format current buffer
     command! -nargs=0 Format :call CocActionAsync('format')
 
-    " Telescope
-    " Find files using Telescope command-line sugar.
-    nnoremap <leader>ff <cmd>Telescope find_files<cr>
-    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-    nnoremap <leader>fb <cmd>Telescope buffers<cr>
-    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+    " Using Lua functions
+    nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+    nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+    nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+    nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-    nnoremap <C-f> <cmd>Telescope find_files<cr>
-    
+    nnoremap <C-f> <cmd>lua require('telescope.builtin').git_files()<cr>
+
 endif
