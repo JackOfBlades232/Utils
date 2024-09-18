@@ -109,6 +109,16 @@ nnoremap <Leader>p "+p
 nnoremap <Leader>Y "*y
 nnoremap <Leader>P "*p
 
+nnoremap <Leader>1 1gt
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
+nnoremap <Leader>6 6gt
+nnoremap <Leader>7 7gt
+nnoremap <Leader>8 8gt
+nnoremap <Leader>9 9gt
+
 if g:os == "Windows"
     nnoremap <Leader>b :!build\build.bat<CR>
 else
