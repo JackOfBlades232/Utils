@@ -28,7 +28,7 @@ struct AllocatorProxy {
 };
 
 template <typename T>
-using ExaminatedAllocator = AllocatorProxy<StackAllocator, T>;
+using ExaminatedAllocator = AllocatorProxy<FreeListAllocator, T>;
 // here you can change LinearAllocator to StackAllocator, PoolAllocator of
 // FreeListAllocator
 
@@ -63,13 +63,11 @@ int main()
            ExaminatedAllocator<int>::max_usage());
     ExaminatedAllocator<int>::reset(); // reset allocator after test
 
-    /*
     {
         for (int i = 0; i < 128; i++) {
             std::vector<int, ExaminatedAllocator<int>> x(64);
         }
     }
-    */
     printf("Allocator memory reusing Max Memory Usage %lld\n",
            ExaminatedAllocator<int>::max_usage());
     ExaminatedAllocator<int>::reset(); // reset allocator after test
