@@ -92,7 +92,7 @@ set nowrap
 au BufNewFile,BufRead *.pp set filetype=pascal
 au BufNewFile,BufRead *.asm set filetype=nasm
 au BufNewFile,BufRead *.frag.inc,*.vert.inc,*.comp.inc,*.glsl.inc set ft=c
-au BufNewFile,BufRead *.dshl set ft=c
+au BufNewFile,BufRead *.dshl,*.hlsl,*.hlsli set ft=c
 
 " Cursor
 let &t_SI = "\<Esc>[5 q"
