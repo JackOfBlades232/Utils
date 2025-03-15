@@ -91,7 +91,8 @@ set nowrap
 " Lang specific
 au BufNewFile,BufRead *.pp set filetype=pascal
 au BufNewFile,BufRead *.asm set filetype=nasm
-au BufNewFile,BufRead *.frag.inc,*.vert.inc,*.comp.inc,*.glsl.inc set ft=glsl
+au BufNewFile,BufRead *.frag.inc,*.vert.inc,*.comp.inc,*.glsl.inc set ft=c
+au BufNewFile,BufRead *.dshl set ft=c
 
 " Cursor
 let &t_SI = "\<Esc>[5 q"
@@ -108,6 +109,7 @@ nnoremap <Leader>y "+y
 nnoremap <Leader>p "+p
 nnoremap <Leader>Y "*y
 nnoremap <Leader>P "*p
+nnoremap <Leader>t :MakeTags<CR>
 
 nnoremap <Leader>1 1gt
 nnoremap <Leader>2 2gt
@@ -125,50 +127,10 @@ else
     nnoremap <Leader>b :make prog<CR>
 endif
 
-if has('nvim')
-    call plug#begin()
-
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
-    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-    Plug 'tikhomirov/vim-glsl'
-
-    call plug#end()
-
-    " @TODO(PKiyashko): go over coc & telescope remap
-
-    " COC
-
-    " Use `[g` and `]g` to navigate diagnostics
-    " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-    nmap <silent> [g <Plug>(coc-diagnostic-prev)
-    nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-    " GoTo code navigation
-    nmap <silent> gd <Plug>(coc-definition)
-    nmap <silent> gy <Plug>(coc-type-definition)
-    nmap <silent> gi <Plug>(coc-implementation)
-    nmap <silent> gr <Plug>(coc-references)
-
-    nmap <silent> <C-]> <Plug>(coc-definition)
-
-    " Symbol renaming
-    nmap <leader>rn <Plug>(coc-rename)
-
-    " Formatting selected code
-    xmap <leader>f <Plug>(coc-format-selected)
-    nmap <leader>f <Plug>(coc-format-selected)
-
-    " Add `:Format` command to format current buffer
-    command! -nargs=0 Format :call CocActionAsync('format')
-
-    " Using Lua functions
-    nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-    nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-    nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-    nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-    nnoremap <C-f> <cmd>lua require('telescope.builtin').git_files()<cr>
-
+if exists("g:neovide")
+    let g:neovide_cursor_animation_length = 0
+    let g:neovide_position_animation_length = 0
+    let g:neovide_scroll_animation_length = 0
+    let g:neovide_cursor_trail_size = 0
+    set guifont=Cascadia\ Mono:h14:#e-subpixelantialias
 endif
