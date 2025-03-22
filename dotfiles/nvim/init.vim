@@ -132,5 +132,5 @@ if exists("g:neovide")
     let g:neovide_position_animation_length = 0
     let g:neovide_scroll_animation_length = 0
     let g:neovide_cursor_trail_size = 0
-    set guifont=Cascadia\ Mono:h14:#e-subpixelantialias
+    set guifont=Cascadia\ Mono:h14:#e-subpixelantialias:#h-none
 endif
