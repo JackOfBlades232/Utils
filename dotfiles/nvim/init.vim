@@ -17,12 +17,6 @@ if !exists("g:os")
     endif
 endif
 
-if has("gui_running")
-    set backspace=indent,eol,start
-    set guifont=Cascadia\ Mono:h14
-    set guioptions=Ace
-endif
-
 set guicursor=n-v-c-sm:block,i-ci-ve:ver15,r-cr-o:hor20
 
 " Syntax highlighting
@@ -124,7 +118,7 @@ nnoremap <Leader>9 9gt
 if g:os == "Windows"
     nnoremap <Leader>b :!build\build.bat<CR>
 else
-    nnoremap <Leader>b :make prog<CR>
+    nnoremap <Leader>b :!build/build.sh<CR>
 endif
 
 if exists("g:neovide")
@@ -132,5 +126,5 @@ if exists("g:neovide")
     let g:neovide_position_animation_length = 0
     let g:neovide_scroll_animation_length = 0
     let g:neovide_cursor_trail_size = 0
-    set guifont=Cascadia\ Mono:h14:#e-subpixelantialias:#h-none
+    set guifont=Fira\ Mono:h15:w-0.2
 endif
