@@ -85,7 +85,9 @@ set nowrap
 " Lang specific
 au BufNewFile,BufRead *.pp set filetype=pascal
 au BufNewFile,BufRead *.asm set filetype=nasm
-au BufNewFile,BufRead *.frag.inc,*.vert.inc,*.comp.inc,*.glsl.inc set ft=c
+au BufNewFile,BufRead *.pl set filetype=prolog
+au BufNewFile,BufRead *.hop set filetype=sml
+au BufNewFile,BufRead *.frag.inc,*.vert.inc,*.comp.inc,*.glsl.inc set ft=glsl
 au BufNewFile,BufRead *.dshl,*.hlsl,*.hlsli set ft=c
 
 " Cursor
