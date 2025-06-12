@@ -31,7 +31,7 @@ colorscheme gruvbox
 " Custom highlight for keywords and types
 autocmd Syntax * syn keyword myTodo NOTE IDEA HUH HACK SPEED OPTIMIZE FEATURE FEAT BUG FIX TEST WIP containedin=.*Comment,vimCommentTitle,cComment,cCommentL,cBlock contained
 hi def link myTodo Todo
-autocmd Syntax * syn keyword myType uint u8 s8 u16 s16 u32 s32 u64 s64 f32 f64 u32f s32f i8 i16 i32 i64 i64f b32
+autocmd Syntax * syn keyword myType uint u8 s8 u16 s16 u32 s32 u64 s64 f32 f64 i8 i16 i32 i64 b32
 hi def link myType Type
 
 " Line numbers
@@ -86,7 +86,8 @@ set nowrap
 au BufNewFile,BufRead *.pp set filetype=pascal
 au BufNewFile,BufRead *.asm set filetype=nasm
 au BufNewFile,BufRead *.pl set filetype=prolog
-au BufNewFile,BufRead *.hop set filetype=sml
+au BufNewFile,BufRead *.hop set filetype=hop
+au BufNewFile,BufRead *.gltf set filetype=json
 au BufNewFile,BufRead *.frag.inc,*.vert.inc,*.comp.inc,*.glsl.inc set ft=glsl
 au BufNewFile,BufRead *.dshl,*.hlsl,*.hlsli set ft=c
 
