@@ -6,4 +6,5 @@ if exists(":Files")
     endif
 
     nnoremap <C-f> :Files<CR>
+    nnoremap <C-b> :Buffers<CR>
 endif
