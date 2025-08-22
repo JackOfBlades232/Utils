@@ -105,10 +105,6 @@ nnoremap <leader>pv :Ex<CR>
 nnoremap <C-f> :find 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-nnoremap <Leader>y "+y
-nnoremap <Leader>p "+p
-nnoremap <Leader>Y "*y
-nnoremap <Leader>P "*p
 nnoremap <Leader>t :MakeTags<CR>
 
 nnoremap <Leader>1 1gt
@@ -120,6 +116,11 @@ nnoremap <Leader>6 6gt
 nnoremap <Leader>7 7gt
 nnoremap <Leader>8 8gt
 nnoremap <Leader>9 9gt
+
+vnoremap <C-S-C> "+y
+nnoremap <C-S-V> "+p
+inoremap <C-S-V> <C-r>+
+cnoremap <C-S-V> <C-r>+
 
 if g:os == "Windows"
     nnoremap <Leader>b :!build\build.bat<CR>
