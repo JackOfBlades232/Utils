@@ -121,6 +121,7 @@ vnoremap <C-S-C> "+y
 nnoremap <C-S-V> "+p
 inoremap <C-S-V> <C-r>+
 cnoremap <C-S-V> <C-r>+
+tnoremap <C-S-V> <C-\><C-N>"+pi
 
 if g:os == "Windows"
     nnoremap <Leader>b :!build\build.bat<CR>
