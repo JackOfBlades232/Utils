@@ -31,7 +31,7 @@ colorscheme gruvbox
 " Custom highlight for keywords and types
 autocmd Syntax * syn keyword myTodo NOTE IDEA HUH HACK SPEED OPTIMIZE FEATURE FEAT BUG FIX TEST WIP containedin=.*Comment,vimCommentTitle,cComment,cCommentL,cBlock contained
 hi def link myTodo Todo
-autocmd Syntax * syn keyword myType uint uchar usize isize u8 s8 u16 s16 u32 s32 u64 s64 f32 f64 i8 i16 i32 i64 b32
+autocmd Syntax * syn keyword myType uint uchar ulong ullong usize isize u8 s8 u16 s16 u32 s32 u64 s64 f32 f64 i8 i16 i32 i64 b32
 hi def link myType Type
 
 " Line numbers
@@ -134,5 +134,5 @@ if exists("g:neovide")
     let g:neovide_position_animation_length = 0
     let g:neovide_scroll_animation_length = 0
     let g:neovide_cursor_trail_size = 0
-    set guifont=Fira\ Mono:h15:w-0.2
+    set guifont=Fira\ Mono:h12:w-0.2
 endif
