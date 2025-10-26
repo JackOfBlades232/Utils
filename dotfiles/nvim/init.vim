@@ -129,6 +129,19 @@ else
     nnoremap <Leader>b :!build/build.sh<CR>
 endif
 
+if has("nvim")
+lua << EOF
+    vim.diagnostic.config({ signs = false })
+
+    for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+      vim.api.nvim_set_hl(0, group, {})
+    end
+
+    -- Only on per-project basis
+    -- vim.lsp.enable("clangd")
+EOF
+endif
+
 if exists("g:neovide")
     let g:neovide_cursor_animation_length = 0
     let g:neovide_position_animation_length = 0
