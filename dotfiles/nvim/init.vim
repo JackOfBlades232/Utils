@@ -31,7 +31,7 @@ colorscheme gruvbox
 " Custom highlight for keywords and types
 autocmd Syntax * syn keyword myTodo NOTE IDEA HUH HACK SPEED OPTIMIZE FEATURE FEAT BUG FIX TEST WIP containedin=.*Comment,vimCommentTitle,cComment,cCommentL,cBlock contained
 hi def link myTodo Todo
-autocmd Syntax * syn keyword myType llong uint uchar ulong ullong ushort usize isize u8 s8 u16 s16 u32 s32 u64 s64 f32 f64 i8 i16 i32 i64 b32
+autocmd Syntax * syn keyword myType llong uint uchar ulong ullong ushort usize isize wchar u8 s8 u16 s16 u32 s32 u64 s64 f32 f64 i8 i16 i32 i64 b32
 hi def link myType Type
 
 " Line numbers
