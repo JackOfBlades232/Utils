@@ -8,7 +8,4 @@ if ok then
     vim.keymap.set("n", "<C-S-f>", fff.live_grep, {
         desc = "Live grep",
     })
-    vim.keymap.set("n", "<C-b>", fff.buffers, {
-        desc = "Switch buffers",
-    })
 end
